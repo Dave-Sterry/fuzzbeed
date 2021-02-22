@@ -19,7 +19,7 @@ function NewSurveyForm(props){
   }
   return (
     <>
-      <form onSubmit={props.formSubmissionHandler}>
+      <form onSubmit={addSurveyToFirestore}>
         <input
           type="text"
           name="names"
@@ -31,7 +31,7 @@ function NewSurveyForm(props){
         <textarea
           name="issue"
           placeholder="Describe your issue." />
-          <button type="submit" formSubmissionHandler={addSurveyToFirestore}>Submit Survey</button>
+          <button type="submit">Submit Survey</button>
       </form>
     </>
   );
@@ -44,3 +44,5 @@ NewSurveyForm.propTypes = {
 };
 
 export default NewSurveyForm;
+
+// formSubmissionHandler={addSurveyToFirestore}

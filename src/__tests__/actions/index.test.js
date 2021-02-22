@@ -1,5 +1,5 @@
-import * as a from './../../actions/index';
-import * as c from './../../actions/ActionTypes'
+import * as a from '../../actions/index';
+import * as c from '../../actions/ActionTypes'
 
 describe('survey actions', () => {
   it('DELETE_SURVEY should create DELETE_SURVEY action', () => {

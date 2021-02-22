@@ -31,7 +31,7 @@ function NewSurveyForm(props){
         <textarea
           name="issue"
           placeholder="Describe your issue." />
-          <button type="submit">{props.buttonText}</button>
+          <button type="submit" formSubmissionHandler={addSurveyToFirestore}>Submit Survey</button>
       </form>
     </>
   );

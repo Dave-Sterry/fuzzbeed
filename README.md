@@ -2,7 +2,7 @@
 
 # Survey
 
-## Fundamentals of React & Redux Independent Project for Epicodus, Weeks 16 & 17
+## Two-Day Project with Epicodus School Working with Firestore, React, and Redux
 
 ### By Zahnen Garner, David Sterry, & Danielle Thompson
 
@@ -20,7 +20,7 @@ danithompson74 at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-th
 
 _No known bugs at this time._
 
-[Report bugs here.](https://github.com/dani-t-codes/tap-room-redux/issues) | [Request features here.](https://github.com/dani-t-codes/tap-room-redux/issues)
+[Report bugs here.](https://github.com/Zahnen/fuzzbeed/issues) | [Request features here.](https://github.com/Zahnen/fuzzbeed/issues)
 
 ___
 
@@ -30,10 +30,20 @@ This is an application for a tap room to track their keg inventory using React/R
 
 ### Objectives
 
-- CRUD functionality for a survey - user should be aabale to create, update, and delete a survey. {plan - split of CRUD fxnality Mon PM}
+- CRUD functionality for a survey {plan - split of CRUD fxnality Mon PM}
+--> user should be abale to create, update, and delete a survey.
+
+--> Create {T/F only}:
+- textbox for T/F! Q (1)
+- {stretch} dropdown for type of Q (T/F, textbox, multiple choice, dropdown, contact info, date/time, etc)
+- Answer choices with textboxes (4)
 
 - {**Mon priority**} All surveys stored in the Firestore database.
 - {**Mon priority**} User should be able to fill out and submit surveys.
+--> "TakeSurvey.js" page:
+- Link from survey details to chosen survey
+- user should answer T/F to all questions
+- on submit, shows their results (even if results are just their answers - "You're a walrus!")
 - {**Mon priority**} Surveys should be submitted to database.
 
 - {**Tues priority**} User should be able to sign up, sign in, and sign out.
@@ -78,7 +88,7 @@ This is an application for a tap room to track their keg inventory using React/R
 ## Stretch Goals
 
 - Implement more CSS/CSS objects
-- Allow for price and alcoholContent numbers formatting to be decimals to two and one positions, respectively. See[this resource](https://www.varvet.com/blog/format-numbers-in-input-fields-using-react/).
+
 
 ## Technologies Used
 
@@ -128,7 +138,7 @@ ___
 
 ###### For Both Mac & Windows systems
 
-* Once you have Git installed on your computer, go to this [GitHub repository](https://github.com/dani-t-codes/tap-room-redux), click the "Fork" button in the upper right hand corner of the page, and clone this application with the following command:`git clone https://github.com/dani-t-codes/tap-room-redux.git`.
+* Once you have Git installed on your computer, go to this [GitHub repository](https://github.com/Zahnen/fuzzbeed), click the "Fork" button in the upper right hand corner of the page, and clone this application with the following command:`git clone https://github.com/Zahnen/fuzzbeed.git`.
 * Go to the [Node.js website](https://nodejs.org/en/download/) and download the appropriate source code for your Windows operating system.
 * Once the project has been cloned to your computer and you have all the necessary items on your local computer, open the project in the application of your choice.
 

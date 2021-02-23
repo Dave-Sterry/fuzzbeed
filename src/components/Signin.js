@@ -1,82 +1,29 @@
-import React from "react";
-import firebase from "firebase/app";
-import { useAlert } from 'react-alert';
+// Import FirebaseAuth and firebase.
+import React from 'react';
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import firebase from 'firebase';
 
+// Configure FirebaseUI.
+const uiConfig = {
+  // Popup signin flow rather than redirect flow.
+  signInFlow: 'popup',
+  // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
+  signInSuccessUrl: '/signedIn',
+  // We will display Google and Facebook as auth providers.
+  signInOptions: [
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+  ],
+};
 
-
-function Signin(){
-  const alert = useAlert()
-  function doSignUp(event) {
-    event.preventDefault();
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
-      alert.show('Successfully signed up!');
-    }).catch(function(error) {
-      alert.show('Not signed up!');
-    });
-  }
-
-function doSignIn(event) {
-  event.preventDefault();
-  const email = event.target.signinEmail.value;
-  const password = event.target.signinPassword.value;
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-    alert.show("Successfully signed in!");
-  }).catch(function(error) {
-    console.log(error.message);
-  });
-}
-
-// function doSignOut() {
-//   firebase.auth().signOut().then(function() {
-//     console.log("Successfully signed out!");
-//   }).catch(function(error) {
-//     console.log(error.message);
-//   });
-// }
-
+function Signin() {
   return (
-    <React.Fragment>
-      <h1>Sign up</h1>
-      <form className="form-row" onSubmit={doSignUp}>
-        <div className="form-control">
-          <input style={{width: '36rem'}}
-            type='text'
-            name='email'
-            placeholder='handsomecat@umail.com' />
-        </div>
-        <div className="form-control" style={{width: '36rem'}}>
-          <input style={{width: '36rem'}}
-            type='password'
-            name='password'
-            placeholder='Password' />
-        </div>
-        <div className="form-control">
-          <button type='submit' className='btn btn-success'>Sign up</button>
-        </div>
-      </form>
-    <h1>Sign In</h1>
-    <form className="form-row" onSubmit={doSignIn}>
-        <div className="form-control">
-          <input style={{width: '36rem'}}
-            type='text'
-            name='signinEmail'
-            placeholder='handsomecat@umail.com' />
-        </div>
-        <div className="form-control" style={{width: '36rem'}}>
-          <input style={{width: '36rem'}}
-            type='password'
-            name='signinPassword'
-            placeholder='Password' />
-        </div>
-        <div className="form-control">
-          <button type='submit' className='btn btn-success'>Sign in</button>
-        </div>
-    </form>
-  </React.Fragment>
+    <div>
+      <h1>Welcome to FuzzBeed</h1>
+      <p>Please sign-in:</p>
+      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+    </div>
   );
 }
 
 export default Signin;
-

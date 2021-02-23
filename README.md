@@ -37,28 +37,35 @@ TODO
 --> user should be abale to create, update, and delete a survey.
 - {**Mon priority**} All surveys stored in the Firestore database. {done}
 - {**Mon priority**} Surveys should be submitted to database.{done}
+- {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
 
-- {**Tues AM stretch**} Try to add broken test back in (eh?)
+---
+- {**Tues PM Conditionals for Sign In/SignOut Components**}
+--> NavBar
+--> Page itself
+--> Alerts
+--> Making redirects happen on sign in --> dashboard/sign up --> sign in/sign out --> "Goodbye!"
+- {**Tues PM stretch?**} User should have their own dashboard which lists surveys created.
+- {**Tues**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
 
---> Create {short answer only}:
-- textbox for Q with short answer textbox answers (1)
-- {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
-- Answer choices with textboxes (4)
-
-- {**Tues AM HIGH priority**} Make real surveys, not help queue.
-- {**Tues AM priority**} User should be able to fill out and submit surveys.
+---
+- {**Wed**} Host on Firebase.
+- {**Wed AM**} Make real surveys, not help queue.
+--> Survey Create {short answer only}:
+--> textbox for Q with short answer textbox answers (1)
+--> {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
+--> Answer choices with textboxes (4)
+- {**Wed AM**} User should be able to fill out and submit surveys.
 --> "TakeSurvey.js" page:
 - Link from survey details to chosen survey
 - user should answer T/F to all questions
 - on submit, shows their results (even if results are just their answers - "You're a walrus!")
+- {**Wed stretch**} Try to add broken test back in (eh?)
 
-- {**Tues PM priority**} User should be able to sign up, sign in, and sign out.
-- {**Tues PM stretch?**} User should have their own dashboard which lists surveys created.
-
+---
 - {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.
 - {stretch} Use a library like D3 to visualize data from surveys.
 - {stretch} Make a component diagram.
-- {stretch} Push to gh-pages (eh? eh?).
 - {UPDATE} README
 
 <div align="center">
@@ -101,6 +108,8 @@ TODO
 - Redux v4.0.5
 - Firebase v.7.8.0
 - Firestore
+- React-Router-Dom v.5.1.2
+- Firebase Authentication & Authorization
 - npm
 - node.js
 - `create-react-app`

@@ -66,7 +66,10 @@ class SurveyControl extends React.Component {
   }
 
   render(){
-    const auth = this.props.firebase.auth();
+    //add an instance of the Google provider object
+    const provider = new this.props.firebase.auth.GoogleAuthProvider();
+    //sign in by redirecting to sign-in page
+    const auth = this.props.firebase.auth().signInWithRedirect(provider);
     if (!isLoaded(auth)) {
       return (
         <>
@@ -107,7 +110,9 @@ class SurveyControl extends React.Component {
           <button onClick={this.handleClick}>{buttonText}</button>
         </React.Fragment>
       );
-    }
+    } //else {
+        //do "You must be signed in" magic here.
+    //}
   }
 
 }

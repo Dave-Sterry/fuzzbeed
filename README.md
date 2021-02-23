@@ -101,6 +101,8 @@ TODO
 - Redux v4.0.5
 - Firebase v.7.8.0
 - Firestore
+- react-alert v7.0.2
+- FirebaseUI-web-react v.4.0.0
 - npm
 - node.js
 - `create-react-app`

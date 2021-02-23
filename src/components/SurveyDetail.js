@@ -10,7 +10,7 @@ function SurveyDetail(props){
       <h3>{survey.location} - {survey.names}</h3>
       <p><em>{survey.issue}</em></p>
       <button onClick={ props.onClickingEdit }>Update Survey</button>
-      <button onClick={()=> onClickingDelete(survey.id) }>Close Survey</button>
+      <button onClick={()=> onClickingDelete(survey.id) }>Delete Survey</button>
       <hr/>
     </React.Fragment>
   );

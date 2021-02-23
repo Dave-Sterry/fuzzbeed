@@ -15,6 +15,9 @@
 ### Get in Touch
 
 danithompson74 at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-thompson74/)
+zahnen at gmail.com | [LinkedIn](https://www.linkedin.com/in/zahnen/)
+sterry.david at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-thompson74/)
+
 
 ### Known Bugs
 
@@ -26,31 +29,37 @@ ___
 
 ## Description
 
-This is an application for a tap room to track their keg inventory using React/Redux framework.
+TODO
 
 ### Objectives
 
-- CRUD functionality for a survey {plan - split of CRUD fxnality Mon PM}
+- CRUD functionality for a survey {plan - split of CRUD fxnality Mon PM} {done}
 --> user should be abale to create, update, and delete a survey.
+- {**Mon priority**} All surveys stored in the Firestore database. {done}
+- {**Mon priority**} Surveys should be submitted to database.{done}
 
---> Create {T/F only}:
-- textbox for T/F! Q (1)
-- {stretch} dropdown for type of Q (T/F, textbox, multiple choice, dropdown, contact info, date/time, etc)
+- {**Tues AM stretch**} Try to add broken test back in (eh?)
+
+--> Create {short answer only}:
+- textbox for Q with short answer textbox answers (1)
+- {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
 - Answer choices with textboxes (4)
 
-- {**Mon priority**} All surveys stored in the Firestore database.
-- {**Mon priority**} User should be able to fill out and submit surveys.
+- {**Tues AM HIGH priority**} Make real surveys, not help queue.
+- {**Tues AM priority**} User should be able to fill out and submit surveys.
 --> "TakeSurvey.js" page:
 - Link from survey details to chosen survey
 - user should answer T/F to all questions
 - on submit, shows their results (even if results are just their answers - "You're a walrus!")
-- {**Mon priority**} Surveys should be submitted to database.
 
-- {**Tues priority**} User should be able to sign up, sign in, and sign out.
-- {**Tues priority**} User should have their own dashboard which lists surveys created.
+- {**Tues PM priority**} User should be able to sign up, sign in, and sign out.
+- {**Tues PM stretch?**} User should have their own dashboard which lists surveys created.
 
 - {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.
 - {stretch} Use a library like D3 to visualize data from surveys.
+- {stretch} Make a component diagram.
+- {stretch} Push to gh-pages (eh? eh?).
+- {UPDATE} 
 
 <div align="center">
 
@@ -75,15 +84,7 @@ This is an application for a tap room to track their keg inventory using React/R
 |  7 	|   A user should be able to see how many pints are left in a keg.	|
 
 
-<div align="center">
-
 ---
-
-## Wireframe
-
-![Tap Room Wireframe](https://i.postimg.cc/V6Jn98HR/Tap-Room-Wire-Frame.png)
-
-</div>
 
 ## Stretch Goals
 

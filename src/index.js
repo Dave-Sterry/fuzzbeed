@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import { createFirestoreInstance } from 'redux-firestore';
 import firebase from "./firebase";
+import 'firebase/auth';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
+import { render } from 'react-dom'
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 
 const store = createStore(rootReducer);
@@ -16,18 +21,37 @@ const store = createStore(rootReducer);
 const rrfProps = {
   firebase,
   config: {
-      userProfile: "users"
+      userProfile: "users",
+      useFirestoreForProfile: true,
     },
   dispatch: store.dispatch,
   createFirestoreInstance
 }
 
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.BOTTOM_CENTER,
+  timeout: 5000,
+  offset: '30px',
+  // you can also just use 'scale'
+  transition: transitions.SCALE
+}
+
+// const Root = () => (
+//   <AlertProvider template={AlertTemplate} {...options}>
+//     <App />
+//   </AlertProvider>
+// )
+
 ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rrfProps}>
-      <App />
+      <AlertProvider template={AlertTemplate} {...options}>
+        <App />
+      </AlertProvider>
     </ReactReduxFirebaseProvider>
   </Provider>,
+  // <Root />
 
 
   document.getElementById('root')

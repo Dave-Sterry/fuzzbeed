@@ -3,7 +3,7 @@ import Survey from "./Survey";
 import PropTypes from "prop-types";
 
 import { useSelector } from 'react-redux'; //hook to extract data from a Redux store
-import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'; //hook that allows to listen for changes to Firestore w/o using an HOC in a class component
+import { useFirestoreConnect, isLoaded } from 'react-redux-firebase'; //hook that allows to listen for changes to Firestore w/o using an HOC in a class component
 
 function SurveyList(props){
   //from react-redux-firebase

@@ -4,7 +4,7 @@
 
 ## Two-Day Project with Epicodus School Working with Firestore, React, and Redux
 
-### By Zahnen Garner, David Sterry, & Danielle Thompson
+### By Zahnen GarnNameer, David Sterry, & Danielle Thompson
 
 ### Project began 2.22.21. Last updated 2.23.21.
 
@@ -16,7 +16,7 @@
 
 danithompson74 at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-thompson74/)
 zahnen at gmail.com | [LinkedIn](https://www.linkedin.com/in/zahnen/)
-sterry.david at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-thompson74/)
+sterry.david at gmail.com | [LinkedIn](https://www.linkedin.com/in/david-sterry-developer/)
 
 
 ### Known Bugs
@@ -59,7 +59,7 @@ TODO
 - {stretch} Use a library like D3 to visualize data from surveys.
 - {stretch} Make a component diagram.
 - {stretch} Push to gh-pages (eh? eh?).
-- {UPDATE} 
+- {UPDATE} README
 
 <div align="center">
 

@@ -4,7 +4,7 @@ import SurveyList from './SurveyList';
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
 import { connect } from 'react-redux';
-import { withFirestore } from 'react-redux-firebase'
+import { withFirestore, isLoaded } from 'react-redux-firebase'
 import PropTypes from "prop-types";
 import * as a from './../actions';
 
@@ -66,31 +66,48 @@ class SurveyControl extends React.Component {
   }
 
   render(){
-    let currentlyVisibleState = null;
-    let buttonText = null;
-    if (this.state.editing ) {
-      currentlyVisibleState = <EditSurveyForm survey = {this.state.selectedSurvey} onEditSurvey = {this.handleEditingSurveyInList} />
-      buttonText = "Return to Survey List";
-    } else if (this.state.selectedSurvey != null) {
-      currentlyVisibleState =
-      <SurveyDetail
-        survey = {this.state.selectedSurvey}
-        onClickingDelete = {this.handleDeletingSurvey}
-        onClickingEdit = {this.handleEditClick} />
-      buttonText = "Return to Survey List";
-    } else if (this.props.formVisibleOnPage) {
-      currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
-      buttonText = "Return to Survey List";
-    } else {
-      currentlyVisibleState = <SurveyList surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />;
-      buttonText = "Add Survey";
+    const auth = this.props.firebase.auth();
+    if (!isLoaded(auth)) {
+      return (
+        <>
+          <h1>Loading...</h1>
+        </>
+      )
     }
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
-      </React.Fragment>
-    );
+    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      return (
+        <>
+          <h1>You must be signed in to access FuzzBeed.</h1>
+        </>
+      )
+    }
+    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      let currentlyVisibleState = null;
+      let buttonText = null;
+      if (this.state.editing ) {
+        currentlyVisibleState = <EditSurveyForm survey = {this.state.selectedSurvey} onEditSurvey = {this.handleEditingSurveyInList} />
+        buttonText = "Return to Survey List";
+      } else if (this.state.selectedSurvey != null) {
+        currentlyVisibleState =
+        <SurveyDetail
+          survey = {this.state.selectedSurvey}
+          onClickingDelete = {this.handleDeletingSurvey}
+          onClickingEdit = {this.handleEditClick} />
+        buttonText = "Return to Survey List";
+      } else if (this.props.formVisibleOnPage) {
+        currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
+        buttonText = "Return to Survey List";
+      } else {
+        currentlyVisibleState = <SurveyList surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />;
+        buttonText = "Add Survey";
+      }
+      return (
+        <React.Fragment>
+          {currentlyVisibleState}
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </React.Fragment>
+      );
+    }
   }
 
 }

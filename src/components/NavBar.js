@@ -1,7 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import firebase from "firebase/app";
+import { useAlert } from 'react-alert';
 
 function NavBar() {
+
+  const alert = useAlert()
+  function doSignOut() {
+    firebase.auth().signOut().then(function() {
+      alert.show("Successfully signed out!");
+    }).catch(function(error) {
+      alert.show("There was an error signing out");
+    });
+  }
+
   return(
     <React.Fragment>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +33,8 @@ function NavBar() {
                 <Link className="nav-link" to="/signin">Sign In</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signout">Sign Out</Link>
+                <Link onClick={doSignOut} className="nav-link" to="/signout">Sign Out</Link>
+    {/* <button onClick={doSignOut} className="btn btn-warning">Sign out</button> */}
               </li>
             </ul>
           </div>

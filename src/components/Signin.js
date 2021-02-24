@@ -1,6 +1,7 @@
 import React from "react";
 import firebase from "firebase/app";
 import { useAlert } from 'react-alert';
+import {Form, Button} from 'react-bootstrap';
 
 function Signin(){
   //react-alert
@@ -30,45 +31,48 @@ function Signin(){
 
   return (
     <React.Fragment>
-      <div className="container">
-        <h1>Sign up</h1>
-        <form className="form-row" onSubmit={doSignUp} style={{paddingBottom: '50px'}}>
-          <div className="form-control">
-            <input style={{width: '36rem'}}
-              type='text'
-              name='email'
-              placeholder='handsomecat@umail.com' />
-          </div>
-          <div className="form-control" style={{width: '36rem'}}>
-            <input style={{width: '36rem'}}
-              type='password'
-              name='password'
-              placeholder='Password' />
-          </div>
-          <div className="form-control">
-            <button type='submit' className='btn btn-success'>Sign up</button>
-          </div>
-        </form>
-      <h1>Already have an account?</h1>
-      <h2>Sign In With Email</h2>
-      <form className="form-row" onSubmit={doSignIn}>
-          <div className="form-control">
-            <input style={{width: '36rem'}}
-              type='text'
-              name='signinEmail'
-              placeholder='handsomecat@umail.com' />
-          </div>
-          <div className="form-control" style={{width: '36rem'}}>
-            <input style={{width: '36rem'}}
-              type='password'
-              name='signinPassword'
-              placeholder='Password' />
-          </div>
-          <div className="form-control">
-            <button type='submit' className='btn btn-success'>Sign in</button>
-          </div>
-      </form>
-    </div>
+    <div className="container">
+      <h1 style={{textAlign: 'center'}}>Sign up</h1>
+      <Form style={{paddingBottom: '50px', width: '48rem'}} onSubmit={doSignUp}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control name="email" type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control name="password" type="password" placeholder="Password" />
+        </Form.Group>
+        <Button variant="success" type="submit">
+          Submit
+        </Button>
+    </Form>
+    <h1 style={{textAlign: 'center'}}>Already have an account?</h1>
+    <h1 style={{textAlign: 'center'}}>Sign In</h1>
+    <Form style={{paddingBottom: '50px', width: '48rem'}} onSubmit={doSignIn}>
+        <Form.Group controlId="formBasicSignInEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control name='signinEmail' type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicSignInPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control name='signinPassword' type="password" placeholder="Password" />
+        </Form.Group>
+        <Form.Group controlId="formBasicCheckbox">
+          <Form.Check type="checkbox" label="Remember me" />
+        </Form.Group>
+        <Button variant="success" type="submit">
+          Submit
+        </Button>
+    </Form>
+  </div>
   </React.Fragment>
   );
 }

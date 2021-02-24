@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase'
 import PropTypes from "prop-types";
 import * as a from './../actions';
+import firebase from "firebase/app";
+
 
 class SurveyControl extends React.Component {
 
@@ -66,22 +68,50 @@ class SurveyControl extends React.Component {
   }
 
   render(){
-    const auth = this.props.firebase.auth();
-    if (!isLoaded(auth)) {
+    //add an instance of the Google provider object
+    const provider = new firebase.auth.GoogleAuthProvider();
+    //sign in by redirecting to sign-in page
+    const auth = this.props.firebase.auth();//.signInWithRedirect();
+    // const popUpAuth = this.props.firebase.auth().signInWithPopup(provider);
+
+    // const popUpAuth = this.props.firebase.auth()
+    //   .signInWithPopup(provider)
+    //   .then((result) => {
+    //     /** @type {firebase.auth.OAuthCredential} */
+    //     var credential = result.credential;
+
+    //     // This gives you a Google Access Token. You can use it to access the Google API.
+    //     var token = credential.accessToken;
+    //     // The signed-in user info.
+    //     var user = result.user;
+    //     // ...
+    //   }).catch((error) => {
+    //     // Handle Errors here.
+    //     var errorCode = error.code;
+    //     var errorMessage = error.message;
+    //     // The email of the user's account used.
+    //     var email = error.email;
+    //     // The firebase.auth.AuthCredential type that was used.
+    //     var credential = error.credential;
+    //     // ...
+    //   });
+
+
+    if ((!isLoaded(auth)) || (!isLoaded(provider))) {
       return (
         <>
           <h1>Loading...</h1>
         </>
       )
     }
-    if ((isLoaded(auth)) && (auth.currentUser == null)) {
+    if (((isLoaded(auth)) || (isLoaded(provider))) && (auth.currentUser == null)) {
       return (
         <>
           <h1>You must be signed in to access FuzzBeed.</h1>
         </>
       )
     }
-    if ((isLoaded(auth)) && (auth.currentUser != null)) {
+    if (((isLoaded(auth)) || (isLoaded(provider))) && (auth.currentUser != null)) {
       let currentlyVisibleState = null;
       let buttonText = null;
       if (this.state.editing ) {
@@ -107,7 +137,9 @@ class SurveyControl extends React.Component {
           <button onClick={this.handleClick}>{buttonText}</button>
         </React.Fragment>
       );
-    }
+    } //else {
+        //do "You must be signed in" magic here.
+    //}
   }
 
 }

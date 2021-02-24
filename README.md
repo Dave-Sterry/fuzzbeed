@@ -40,11 +40,17 @@ TODO
 - {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
 
 ---
+<<<<<<< HEAD
 - {**Tues PM Conditionals for Sign In/SignOut Components**}
+=======
+- {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch.
+- {**Wed AM Conditionals for Sign In/SignOut Components**}
+>>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 --> NavBar
 --> Page itself
 --> Alerts
 --> Making redirects happen on sign in --> dashboard/sign up --> sign in/sign out --> "Goodbye!"
+<<<<<<< HEAD
 - {**Tues PM stretch?**} User should have their own dashboard which lists surveys created.
 - {**Tues**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
 
@@ -56,6 +62,14 @@ TODO
 --> {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
 --> Answer choices with textboxes (4)
 - {**Wed AM**} User should be able to fill out and submit surveys.
+=======
+- {**Wed**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
+- {**Wed**} Make real surveys, not help queue.
+--> Survey Create {short answer only}:
+--> textbox for Q with short answer textbox answers (1)
+--> Answer choices with textboxes (4)
+- {**Wed**} User should be able to fill out and submit surveys.
+>>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 --> "TakeSurvey.js" page:
 - Link from survey details to chosen survey
 - user should answer T/F to all questions
@@ -63,10 +77,16 @@ TODO
 - {**Wed stretch**} Try to add broken test back in (eh?)
 
 ---
+<<<<<<< HEAD
 - {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.
 - {stretch} Use a library like D3 to visualize data from surveys.
 - {stretch} Make a component diagram.
 - {UPDATE} README
+=======
+- {**Thurs AM**} Host on Firebase.
+- {**Wed PM/Thurs AM stretch?**} User should have their own dashboard which lists surveys created. [see dis](https://firebase.google.com/docs/auth/web/manage-users#get_a_users_profile) [and dis](https://developers.google.com/identity/sign-in/web/sign-in#get_profile_information)
+- {**ongoing UPDATE**} README
+>>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 
 <div align="center">
 
@@ -82,13 +102,11 @@ TODO
 
 |  # 	|  Stories 	|
 |---	|---	|
-|  1 	|  A user should be able to Create, Update, Delete, and see list and details of kegs in the tap room. 	|
-|  2 	|   Decrease kegQuantity remaining per keg when a pint is purchased. For instance, if a user clicks "Buy", the quantity will decrease by one.	|
-|  3 	|   When the quantity of an keg is reduced to 0, the keg should say "Out of Stock". A user should not be able to reduce the quantity of a keg below 0.	|
-|  4 	|   When the quantity of an keg is reduced to 0, the user should be prompted with the option to restock the keg.	|
-|  5 	|   When there is a keg in the inventory that is extra expensive, the user should see the details of the keg listed in red font, not black.	|
-|  6 	|   Kegs should have fields for name, brand, price, alcoholContent.	|
-|  7 	|   A user should be able to see how many pints are left in a keg.	|
+|  1 	|  A user should be able to create, update and delete a survey. All surveys should be stored in the database. 	|
+|  2 	|   A user should be able to fill out and submit surveys. Survey results should be submitted to the database. 	|
+|  3 	|   A user should be able to sign up, sign in, and sign out.	|
+|  4 	|   A user should have their own dashboard which lists the surveys they've created.	|
+|  5 	|   {Stretch} A user should be able to see the combined data on a survey in their dashboard. For instance, if a survey provides a 1-5 rating, return an average rating for all surveys.	|
 
 
 ---
@@ -96,6 +114,11 @@ TODO
 ## Stretch Goals
 
 - Implement more CSS/CSS objects
+- {stretch} Try to add broken test back in (eh?)
+- {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
+- {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.
+- {stretch} Use a library like D3 to visualize data from surveys.
+- {stretch} Make a component diagram.
 
 
 ## Technologies Used
@@ -110,6 +133,12 @@ TODO
 - Firestore
 - React-Router-Dom v.5.1.2
 - Firebase Authentication & Authorization
+<<<<<<< HEAD
+=======
+- Firestore
+- react-alert v7.0.2
+- FirebaseUI-web-react v.4.0.0
+>>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 - npm
 - node.js
 - `create-react-app`

@@ -18,12 +18,20 @@ function Signin(){
     });
   }
 
+// HOOK INTO INSTEAD OF CONSTRUCTOR with useEffect() ???
+//   constructor( props ) {
+//     super( props );
+//     this.setState( {
+//         isLoggedIn : false,
+//     } );
+// }
   function doSignIn(event) {
     event.preventDefault();
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
     firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
       alert.show("Successfully signed in!");
+      //this.setState( { isLoggedIn : !this.state.isLoggedIn } )
     }).catch(function(error) {
       console.log(error.message);
     });

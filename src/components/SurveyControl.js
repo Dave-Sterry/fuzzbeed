@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import PropTypes from "prop-types";
 import * as a from './../actions';
+import Button from 'react-bootstrap/Button';
 
 class SurveyControl extends React.Component {
 
@@ -79,8 +80,6 @@ class SurveyControl extends React.Component {
     }
 
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
-      console.log(auth);
-      console.log("test not signed in");
       return (
         <>
           <h1>You must be signed in to access FuzzBeed.</h1>
@@ -89,7 +88,6 @@ class SurveyControl extends React.Component {
     }
 
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
-      console.log("test signed in");
       let currentlyVisibleState = null;
       let buttonText = null;
       if (this.state.editing ) {
@@ -112,7 +110,7 @@ class SurveyControl extends React.Component {
       return (
         <React.Fragment>
           {currentlyVisibleState}
-          <button onClick={this.handleClick}>{buttonText}</button>
+          <Button onClick={this.handleClick} variant="warning">{buttonText}</Button>{' '}
         </React.Fragment>
       );
     } //else {

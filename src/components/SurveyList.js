@@ -17,16 +17,18 @@ function SurveyList(props){
   if (isLoaded(surveys)){
   return(
     <React.Fragment>
-      <hr/>
-      {surveys.map((survey) => {
-        return <Survey
-          whenSurveyClicked = { props.onSurveySelection }
-          names={survey.names}
-          location={survey.location}
-          issue={survey.issue}
-          id={survey.id}
-          key={survey.id}/>
-      })}
+      <div className="container">
+        <hr/>
+        {surveys.map((survey) => {
+          return <Survey
+            whenSurveyClicked = { props.onSurveySelection }
+            names={survey.names}
+            location={survey.location}
+            issue={survey.issue}
+            id={survey.id}
+            key={survey.id}/>
+        })}
+      </div>
       </React.Fragment>
     );
   } else {

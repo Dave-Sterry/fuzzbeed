@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useFirestore } from 'react-redux-firebase';
+import { Form, Button } from 'react-bootstrap';
 
 function NewSurveyForm(props){
   const firestore = useFirestore();
@@ -19,20 +20,26 @@ function NewSurveyForm(props){
   }
   return (
     <>
-      <form onSubmit={addSurveyToFirestore}>
-        <input
-          type="text"
-          name="names"
-          placeholder="Pair Names" />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location" />
-        <textarea
-          name="issue"
-          placeholder="Describe your issue." />
-          <button type="submit">Submit Survey</button>
-      </form>
+      <div className="container" style={{width: '48rem'}}>
+        <Form onSubmit={addSurveyToFirestore}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Question One</Form.Label>
+            <Form.Control type="text" name="names" placeholder="Pair names" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Question Two</Form.Label>
+            <Form.Control type="text" name="location" placeholder="Location" />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Question Three</Form.Label>
+            <Form.Control type="text" name="issue" placeholder="Describe your issue." />
+          </Form.Group>
+          <Button variant="success" type="submit">
+            Create!
+          </Button>
+        </Form>
+      </div>
     </>
   );
 }

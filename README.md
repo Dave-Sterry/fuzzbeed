@@ -33,20 +33,22 @@ TODO
 
 ### Objectives
 
+{complete}
 - CRUD functionality for a survey {plan - split of CRUD fxnality Mon PM} {done}
---> user should be abale to create, update, and delete a survey.
+--> user should be able to create, update, and delete a survey.{done}
 - {**Mon priority**} All surveys stored in the Firestore database. {done}
 - {**Mon priority**} Surveys should be submitted to database.{done}
 - {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
+- {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch. {done}
+- {**Wed**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work. {done}
 
 ---
-- {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch.
+{TODO}
 - {**Wed AM Conditionals for Sign In/SignOut Components**}
 --> NavBar
 --> Page itself
---> Alerts
+--> Alerts {done}
 --> Making redirects happen on sign in --> dashboard/sign up --> sign in/sign out --> "Goodbye!"
-- {**Wed**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
 - {**Wed**} Make real surveys, not help queue.
 --> Survey Create {short answer only}:
 --> textbox for Q with short answer textbox answers (1)
@@ -110,6 +112,7 @@ TODO
 - Firestore
 - react-alert v7.0.2
 - FirebaseUI-web-react v.4.0.0
+- react-use-auth v.2.1.0-14
 - npm
 - node.js
 - `create-react-app`

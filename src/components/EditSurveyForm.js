@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useFirestore } from 'react-redux-firebase';
+import { Form, Button } from 'react-bootstrap';
 
 function EditSurveyForm(props){
   const firestore = useFirestore();
@@ -18,23 +19,38 @@ function EditSurveyForm(props){
   }
   return (
     <>
-      <form onSubmit={addSurveyToFirestore}>
-        <input
-          defaultValue = {props.survey.names}
-          type="text"
-          name="names"
-          placeholder="Pair Names" />
-        <input
-          defaultValue = {props.survey.location}
-          type="text"
-          name="location"
-          placeholder="Location" />
-        <textarea
-          defaultValue = {props.survey.issue}
-          name="issue"
-          placeholder="Describe your issue." />
-          <button type="submit">Update Survey</button>
-      </form>
+      <div className="container" style={{width: '48rem'}}>
+        <Form onSubmit={addSurveyToFirestore}>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label>Question One</Form.Label>
+            <Form.Control
+            defaultValue = {props.survey.names}
+            type="text"
+            name="names"
+            placeholder="Pair names" />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Question Two</Form.Label>
+            <Form.Control
+            defaultValue = {props.survey.location}
+            type="text"
+            name="location"
+            placeholder="Location" />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Question Three</Form.Label>
+            <Form.Control
+            defaultValue = {props.survey.issue}
+            type="text"
+            name="issue"
+            placeholder="Describe your issue." />
+          </Form.Group>
+          <Button variant="success" type="submit">
+            Create!
+          </Button>
+        </Form>
+      </div>
     </>
   );
 }

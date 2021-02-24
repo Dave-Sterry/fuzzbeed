@@ -40,36 +40,18 @@ TODO
 - {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
 
 ---
-<<<<<<< HEAD
-- {**Tues PM Conditionals for Sign In/SignOut Components**}
-=======
 - {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch.
 - {**Wed AM Conditionals for Sign In/SignOut Components**}
->>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 --> NavBar
 --> Page itself
 --> Alerts
 --> Making redirects happen on sign in --> dashboard/sign up --> sign in/sign out --> "Goodbye!"
-<<<<<<< HEAD
-- {**Tues PM stretch?**} User should have their own dashboard which lists surveys created.
-- {**Tues**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
-
----
-- {**Wed**} Host on Firebase.
-- {**Wed AM**} Make real surveys, not help queue.
---> Survey Create {short answer only}:
---> textbox for Q with short answer textbox answers (1)
---> {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
---> Answer choices with textboxes (4)
-- {**Wed AM**} User should be able to fill out and submit surveys.
-=======
 - {**Wed**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work.
 - {**Wed**} Make real surveys, not help queue.
 --> Survey Create {short answer only}:
 --> textbox for Q with short answer textbox answers (1)
 --> Answer choices with textboxes (4)
 - {**Wed**} User should be able to fill out and submit surveys.
->>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 --> "TakeSurvey.js" page:
 - Link from survey details to chosen survey
 - user should answer T/F to all questions
@@ -77,16 +59,9 @@ TODO
 - {**Wed stretch**} Try to add broken test back in (eh?)
 
 ---
-<<<<<<< HEAD
-- {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.
-- {stretch} Use a library like D3 to visualize data from surveys.
-- {stretch} Make a component diagram.
-- {UPDATE} README
-=======
 - {**Thurs AM**} Host on Firebase.
 - {**Wed PM/Thurs AM stretch?**} User should have their own dashboard which lists surveys created. [see dis](https://firebase.google.com/docs/auth/web/manage-users#get_a_users_profile) [and dis](https://developers.google.com/identity/sign-in/web/sign-in#get_profile_information)
 - {**ongoing UPDATE**} README
->>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 
 <div align="center">
 
@@ -133,12 +108,9 @@ TODO
 - Firestore
 - React-Router-Dom v.5.1.2
 - Firebase Authentication & Authorization
-<<<<<<< HEAD
-=======
 - Firestore
 - react-alert v7.0.2
 - FirebaseUI-web-react v.4.0.0
->>>>>>> 556309824d69e5809aa3dd8be96d96483788c6a7
 - npm
 - node.js
 - `create-react-app`

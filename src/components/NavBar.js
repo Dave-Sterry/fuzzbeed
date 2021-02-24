@@ -39,7 +39,6 @@ function NavBar() {
               </li>
               <li className="nav-item">
                 <Link onClick={doSignOut} className="nav-link" to="/signout">Sign Out</Link>
-    {/* <button onClick={doSignOut} className="btn btn-warning">Sign out</button> */}
               </li>
             </ul>
           </div>

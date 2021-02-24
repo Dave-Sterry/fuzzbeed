@@ -14,7 +14,7 @@ function Signin(){
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
       alert.show('Successfully signed up!');
     }).catch(function(error) {
-      alert.show('Not signed up!');
+      alert.show(error.message + 'Not signed up!');
     });
   }
 
@@ -32,8 +32,8 @@ function Signin(){
   return (
     <React.Fragment>
     <div className="container">
-      <h1 style={{textAlign: 'center'}}>Sign up</h1>
-      <Form style={{paddingBottom: '50px', width: '48rem'}} onSubmit={doSignUp}>
+      <h1>Sign up</h1>
+      <Form style={{paddingBottom: '50px', width: '36rem'}} onSubmit={doSignUp}>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control name="email" type="email" placeholder="Enter email" />
@@ -50,9 +50,9 @@ function Signin(){
           Submit
         </Button>
     </Form>
-    <h1 style={{textAlign: 'center'}}>Already have an account?</h1>
-    <h1 style={{textAlign: 'center'}}>Sign In</h1>
-    <Form style={{paddingBottom: '50px', width: '48rem'}} onSubmit={doSignIn}>
+    <h1>Already have an account?</h1>
+    <h1>Sign In</h1>
+    <Form style={{paddingBottom: '50px', width: '36rem'}} onSubmit={doSignIn}>
         <Form.Group controlId="formBasicSignInEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control name='signinEmail' type="email" placeholder="Enter email" />

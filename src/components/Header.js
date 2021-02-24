@@ -5,7 +5,6 @@ function Header(){
   return (
     <>
       <SiteNavBar />
-      {/* <h1 style={{textAlign: 'center'}}>FuzzBeed</h1> */}
     </>
   )
 }

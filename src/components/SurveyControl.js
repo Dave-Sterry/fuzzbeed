@@ -4,7 +4,7 @@ import SurveyList from './SurveyList';
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
 import { connect } from 'react-redux';
-import { withFirestore, isLoaded } from 'react-redux-firebase'
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 import PropTypes from "prop-types";
 import * as a from './../actions';
 
@@ -70,6 +70,7 @@ class SurveyControl extends React.Component {
     const auth = this.props.firebase.auth();
 
     if (!isLoaded(auth)) {
+      console.log("test loading");
       return (
         <>
           <h1>Loading...</h1>
@@ -78,6 +79,8 @@ class SurveyControl extends React.Component {
     }
 
     if ((isLoaded(auth)) && (auth.currentUser == null)) {
+      console.log(auth);
+      console.log("test not signed in");
       return (
         <>
           <h1>You must be signed in to access FuzzBeed.</h1>
@@ -86,6 +89,7 @@ class SurveyControl extends React.Component {
     }
 
     if ((isLoaded(auth)) && (auth.currentUser != null)) {
+      console.log("test signed in");
       let currentlyVisibleState = null;
       let buttonText = null;
       if (this.state.editing ) {

@@ -30,42 +30,45 @@ function Signin(){
 
   return (
     <React.Fragment>
-      <h1>Sign up</h1>
-      <form className="form-row" onSubmit={doSignUp}>
-        <div className="form-control">
-          <input style={{width: '36rem'}}
-            type='text'
-            name='email'
-            placeholder='handsomecat@umail.com' />
-        </div>
-        <div className="form-control" style={{width: '36rem'}}>
-          <input style={{width: '36rem'}}
-            type='password'
-            name='password'
-            placeholder='Password' />
-        </div>
-        <div className="form-control">
-          <button type='submit' className='btn btn-success'>Sign up</button>
-        </div>
+      <div className="container">
+        <h1>Sign up</h1>
+        <form className="form-row" onSubmit={doSignUp} style={{paddingBottom: '50px'}}>
+          <div className="form-control">
+            <input style={{width: '36rem'}}
+              type='text'
+              name='email'
+              placeholder='handsomecat@umail.com' />
+          </div>
+          <div className="form-control" style={{width: '36rem'}}>
+            <input style={{width: '36rem'}}
+              type='password'
+              name='password'
+              placeholder='Password' />
+          </div>
+          <div className="form-control">
+            <button type='submit' className='btn btn-success'>Sign up</button>
+          </div>
+        </form>
+      <h1>Already have an account?</h1>
+      <h2>Sign In With Email</h2>
+      <form className="form-row" onSubmit={doSignIn}>
+          <div className="form-control">
+            <input style={{width: '36rem'}}
+              type='text'
+              name='signinEmail'
+              placeholder='handsomecat@umail.com' />
+          </div>
+          <div className="form-control" style={{width: '36rem'}}>
+            <input style={{width: '36rem'}}
+              type='password'
+              name='signinPassword'
+              placeholder='Password' />
+          </div>
+          <div className="form-control">
+            <button type='submit' className='btn btn-success'>Sign in</button>
+          </div>
       </form>
-    <h1>Sign In With Email</h1>
-    <form className="form-row" onSubmit={doSignIn}>
-        <div className="form-control">
-          <input style={{width: '36rem'}}
-            type='text'
-            name='signinEmail'
-            placeholder='handsomecat@umail.com' />
-        </div>
-        <div className="form-control" style={{width: '36rem'}}>
-          <input style={{width: '36rem'}}
-            type='password'
-            name='signinPassword'
-            placeholder='Password' />
-        </div>
-        <div className="form-control">
-          <button type='submit' className='btn btn-success'>Sign in</button>
-        </div>
-    </form>
+    </div>
   </React.Fragment>
   );
 }

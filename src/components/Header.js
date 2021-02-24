@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from './NavBar';
+import SiteNavBar from './NavBar';
 
 function Header(){
   return (
     <>
-      <NavBar />
+      <SiteNavBar />
       {/* <h1 style={{textAlign: 'center'}}>FuzzBeed</h1> */}
     </>
   )

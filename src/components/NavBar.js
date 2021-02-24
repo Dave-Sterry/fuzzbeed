@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import { useAlert } from 'react-alert';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'jquery';
+import 'popper.js';
 
 function NavBar() {
 

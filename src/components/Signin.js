@@ -1,7 +1,7 @@
 import React from "react";
 import firebase from "firebase/app";
 import { useAlert } from 'react-alert';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+// import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 
 
@@ -32,10 +32,17 @@ function Signin(){
     });
   }
 
+//try to change a pg redirect on sign in with google
+//signin.js check event to see if google instance or user input, then redir
+//one place or two? probably best practices to one
+
 function doSignIn(event) {
   event.preventDefault();
   const email = event.target.signinEmail.value;
   const password = event.target.signinPassword.value;
+  //add an instance of the Google provider object
+  //const provider = new this.props.firebase.auth.GoogleAuthProvider();
+  //sign in by redirecting to sign-in page
   firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
     alert.show("Successfully signed in!");
   }).catch(function(error) {
@@ -43,13 +50,13 @@ function doSignIn(event) {
   });
 }
 
-// function doSignOut() {
-//   firebase.auth().signOut().then(function() {
-//     console.log("Successfully signed out!");
-//   }).catch(function(error) {
-//     console.log(error.message);
-//   });
-// }
+function doSignOut() {
+  firebase.auth().signOut().then(function() {
+    console.log("Successfully signed out!");
+  }).catch(function(error) {
+    console.log(error.message);
+  });
+}
 
   return (
     <React.Fragment>
@@ -90,7 +97,7 @@ function doSignIn(event) {
         </div>
     </form>
     <h1>Sign In With Google:</h1>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
+      {/* <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} /> */}
   </React.Fragment>
   );
 }

@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
 import './index.css';
+import 'jquery';
+import 'popper.js';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase';

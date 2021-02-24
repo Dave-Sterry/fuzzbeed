@@ -40,7 +40,7 @@ TODO
 - {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
 
 ---
-- {**(First Up)**} Tidy / Send Current OAuth stuff to separte branch.
+- {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch.
 - {**Wed AM Conditionals for Sign In/SignOut Components**}
 --> NavBar
 --> Page itself

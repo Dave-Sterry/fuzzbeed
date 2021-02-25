@@ -11,9 +11,9 @@ function NewSurveyForm(props){
     //how to add a Survey to firestore with a firestore method
     return firestore.collection('surveys').add(
       {
-        names: event.target.names.value,
-        location: event.target.location.value,
-        issue: event.target.issue.value,
+        qOne: event.target.qOne.value,
+        qTwo: event.target.qTwo.value,
+        qThree: event.target.qThree.value,
         timeOpen: firestore.FieldValue.serverTimestamp()
       }
     );
@@ -22,18 +22,26 @@ function NewSurveyForm(props){
     <>
       <div className="container" style={{width: '48rem'}}>
         <Form onSubmit={addSurveyToFirestore}>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group>
             <Form.Label>Question One</Form.Label>
-            <Form.Control type="text" name="names" placeholder="Pair names" />
+            <Form.Control
+              type="text"
+              name="qOne"
+              placeholder="If you could ride any animal into battle, what would it be?" />
           </Form.Group>
-
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>Question Two</Form.Label>
-            <Form.Control type="text" name="location" placeholder="Location" />
+            <Form.Control
+              type="text"
+              name="qTwo"
+              placeholder="What is your favorite color?" />
           </Form.Group>
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>Question Three</Form.Label>
-            <Form.Control type="text" name="issue" placeholder="Describe your issue." />
+            <Form.Control
+              type="text"
+              name="qThree"
+              placeholder="Who is on your zombie apocolypse squad?" />
           </Form.Group>
           <Button variant="success" type="submit">
             Create!

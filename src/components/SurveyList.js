@@ -22,9 +22,9 @@ function SurveyList(props){
         {surveys.map((survey) => {
           return <Survey
             whenSurveyClicked = { props.onSurveySelection }
-            names={survey.names}
-            location={survey.location}
-            issue={survey.issue}
+            qOne={survey.qOne}
+            qTwo={survey.qTwo}
+            qThree={survey.qThree}
             id={survey.id}
             key={survey.id}/>
         })}

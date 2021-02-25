@@ -5,7 +5,6 @@ import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
-import PropTypes from "prop-types";
 import * as a from './../actions';
 import Button from 'react-bootstrap/Button';
 
@@ -41,9 +40,9 @@ class SurveyControl extends React.Component {
   handleChangingSelectedSurvey = (id) => {
     this.props.firestore.get({collection: 'surveys', doc: id}).then((survey) => {
       const firestoreSurvey = {
-        names: survey.get("names"),
-        location: survey.get("location"),
-        issue: survey.get("issue"),
+        qOne: survey.get("qOne"),
+        qTwo: survey.get("qTwo"),
+        qThree: survey.get("qThree"),
         id: survey.id
       }
       this.setState({selectedSurvey: firestoreSurvey });
@@ -104,7 +103,7 @@ class SurveyControl extends React.Component {
         currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
         buttonText = "Return to Survey List";
       } else {
-        currentlyVisibleState = <SurveyList surveyList={this.props.masterSurveyList} onSurveySelection={this.handleChangingSelectedSurvey} />;
+        currentlyVisibleState = <SurveyList onSurveySelection={this.handleChangingSelectedSurvey} />;
         buttonText = "Add Survey";
       }
       return (
@@ -113,20 +112,12 @@ class SurveyControl extends React.Component {
           <Button onClick={this.handleClick} variant="warning">{buttonText}</Button>{' '}
         </React.Fragment>
       );
-    } //else {
-        //do "You must be signed in" magic here.
-    //}
+    }
   }
-
 }
-
-SurveyControl.propTypes = {
-  masterSurveyList: PropTypes.object
-};
 
 const mapStateToProps = state => {
   return {
-    masterSurveyList: state.masterSurveyList,
     formVisibleOnPage: state.formVisibleOnPage
   }
 }

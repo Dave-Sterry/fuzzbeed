@@ -11,9 +11,9 @@ function EditSurveyForm(props){
     props.onEditSurvey();
     //how to add a Survey to firestore with a firestore method
     const propertiesToUpdate = {
-      names: event.target.names.value,
-      location: event.target.location.value,
-      issue: event.target.issue.value,
+      qOne: event.target.qOne.value,
+      qTwo: event.target.qTwo.value,
+      qThree: event.target.qThree.value,
     }
     return firestore.update({collection: 'surveys', doc: survey.id }, propertiesToUpdate);
   }
@@ -21,30 +21,27 @@ function EditSurveyForm(props){
     <>
       <div className="container" style={{width: '48rem'}}>
         <Form onSubmit={addSurveyToFirestore}>
-          <Form.Group controlId="formBasicEmail">
+          <Form.Group>
             <Form.Label>Question One</Form.Label>
             <Form.Control
-            defaultValue = {props.survey.names}
-            type="text"
-            name="names"
-            placeholder="Pair names" />
+              defaultValue = {props.survey.qThree}
+              type="text"
+              name="qOne"/>
           </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>Question Two</Form.Label>
             <Form.Control
-            defaultValue = {props.survey.location}
-            type="text"
-            name="location"
-            placeholder="Location" />
+              defaultValue = {props.survey.qThree}
+              type="text"
+              name="qTwo"/>
           </Form.Group>
-          <Form.Group controlId="formBasicPassword">
+          <Form.Group>
             <Form.Label>Question Three</Form.Label>
             <Form.Control
-            defaultValue = {props.survey.issue}
-            type="text"
-            name="issue"
-            placeholder="Describe your issue." />
+              defaultValue = {props.survey.qThree}
+              type="text"
+              name="qThree"/>
           </Form.Group>
           <Button variant="success" type="submit">
             Create!

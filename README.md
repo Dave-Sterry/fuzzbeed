@@ -41,27 +41,29 @@ TODO
 - {**Tues PM priority**} User should be able to sign up, sign in, and sign out.{done}
 - {**(First Up)**} Tidy / Send Current OAuth stuff to separate branch. {done}
 - {**Wed**} Get the bootstrap.js CDN/bundled file in package working for navbar menu button to work. {done}
+- {**Wed**} Make real surveys, not help queue. {done}
+--> Survey Create {short answer only}:
+--> Sign up/in/out Alerts {done}
 
 ---
 {TODO}
-- {**Wed AM Conditionals for Sign In/SignOut Components**}
+- {**Maybe?? Conditionals for Sign In/SignOut Components**}
 --> NavBar
---> Page itself
---> Alerts {done}
 --> Making redirects happen on sign in --> dashboard/sign up --> sign in/sign out --> "Goodbye!"
-- {**Wed**} Make real surveys, not help queue.
---> Survey Create {short answer only}:
---> textbox for Q with short answer textbox answers (1)
---> Answer choices with textboxes (4)
-- {**Wed**} User should be able to fill out and submit surveys.
---> "TakeSurvey.js" page:
+
+- {**Th**} User should be able to fill out and submit surveys.
 - Link from survey details to chosen survey
-- user should answer T/F to all questions
-- on submit, shows their results (even if results are just their answers - "You're a walrus!")
+--> "TakeSurvey.js" page:
+--> Display value of qOne, qTwo, qThree above each answer textbox
+--> Answer choices with textboxes
+--> on submit, save results to firebase && shows their results (even if results are just their answers - "You're a walrus!")
+//results after submitting new take quiz
+//results be displayed on survey detail as dashboard (stretch: queue in D3)
+- {**Thurs AM**} Host on Firebase.
 
 ---
-- {**Thurs AM**} Host on Firebase.
 - {**Wed PM/Thurs AM stretch?**} User should have their own dashboard which lists surveys created. [see dis](https://firebase.google.com/docs/auth/web/manage-users#get_a_users_profile) [and dis](https://developers.google.com/identity/sign-in/web/sign-in#get_profile_information)
+
 - {**ongoing UPDATE**} README
 
 <div align="center">

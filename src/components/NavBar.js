@@ -22,8 +22,6 @@ function SiteNavBar() {
   // const changeNav = () => {
   //   toggleLogin(false);
   // }
-  console.log(auth2.currentUser);
-
   const alert = useAlert();
 
   function doSignOut() {

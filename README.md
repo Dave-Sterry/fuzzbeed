@@ -1,16 +1,12 @@
 <div align="center">
 
-# Survey
+# FuzzBeed
 
-## Two-Day Project with Epicodus School Working with Firestore, React, and Redux
+## One-Week Project with Epicodus School Working with Firestore, React, and Redux, and Beyond
 
-### By Zahnen GarnNameer, David Sterry, & Danielle Thompson
+### By Zahnen Garner, David Sterry, & Danielle Thompson
 
-### Project began 2.22.21. Last updated 2.23.21.
-
-</div>
-
----
+### Project began 2.22.21. Last updated 2.25.21.
 
 ### Get in Touch
 
@@ -18,6 +14,9 @@ danithompson74 at gmail.com | [LinkedIn](https://www.linkedin.com/in/danielle-th
 zahnen at gmail.com | [LinkedIn](https://www.linkedin.com/in/zahnen/)
 sterry.david at gmail.com | [LinkedIn](https://www.linkedin.com/in/david-sterry-developer/)
 
+</div>
+
+---
 
 ### Known Bugs
 
@@ -29,7 +28,7 @@ ___
 
 ## Description
 
-TODO
+This application, FuzzBeed, is a site for users to create and take fun quizzes that can be shared with **the world**!
 
 ### Objectives
 
@@ -54,12 +53,12 @@ TODO
 - {**Th**} User should be able to fill out and submit surveys.
 - Link from survey details to chosen survey
 --> "TakeSurvey.js" page:
---> Display value of qOne, qTwo, qThree above each answer textbox
+--> Display values of qOne, qTwo, qThree from surveyIdX above each answer textbox, //newSurvey for A1, A2, A3// edit form for answers only
 --> Answer choices with textboxes
 --> on submit, save results to firebase && shows their results (even if results are just their answers - "You're a walrus!")
 //results after submitting new take quiz
-//results be displayed on survey detail as dashboard (stretch: queue in D3)
-- {**Thurs AM**} Host on Firebase.
+//results to be displayed on survey detail as user dashboard (stretch: queue in D3)
+- {**Th**} Host on Firebase.
 
 ---
 - {**Wed PM/Thurs AM stretch?**} User should have their own dashboard which lists surveys created. [see dis](https://firebase.google.com/docs/auth/web/manage-users#get_a_users_profile) [and dis](https://developers.google.com/identity/sign-in/web/sign-in#get_profile_information)
@@ -91,7 +90,7 @@ TODO
 
 ## Stretch Goals
 
-- Implement more CSS/CSS objects
+- Implement more CSS/CSS objects - specifically adding animation changes with React-Router to background colors. (See [this](https://reactrouter.com/web/example/animated-transitions))
 - {stretch} Try to add broken test back in (eh?)
 - {stretch} dropdown for type of Q (T/F (easiest implementation), textbox, multiple choice, dropdown, contact info, date/time, etc)
 - {stretch} User should be able to see combined data on a survey in their dashboard. E.g. an average rating.

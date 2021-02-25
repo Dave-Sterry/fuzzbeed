@@ -15,6 +15,7 @@ function SurveyDetail(props){
         {/**Dashboard of aOne results */}
         <h3>{survey.qThree}</h3>
         {/**Dashboard of aOne results */}
+        <Button onClick={ props.onClickingTake } variant="warning">Take Survey</Button>{' '}
         <Button onClick={ props.onClickingEdit } variant="warning">Update Survey</Button>{' '}
         <Button onClick={()=> onClickingDelete(survey.id) } variant="danger">Delete Survey</Button>{' '}
         <hr/>
@@ -26,7 +27,8 @@ function SurveyDetail(props){
 SurveyDetail.propTypes = {
   survey: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingEdit: PropTypes.func
+  onClickingEdit: PropTypes.func,
+  onClickingTake: PropTypes.func
 };
 
 export default SurveyDetail;

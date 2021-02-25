@@ -24,7 +24,7 @@ function EditSurveyForm(props){
           <Form.Group>
             <Form.Label>Question One</Form.Label>
             <Form.Control
-              defaultValue = {props.survey.qThree}
+              defaultValue = {props.survey.qOne}
               type="text"
               name="qOne"/>
           </Form.Group>
@@ -32,7 +32,7 @@ function EditSurveyForm(props){
           <Form.Group>
             <Form.Label>Question Two</Form.Label>
             <Form.Control
-              defaultValue = {props.survey.qThree}
+              defaultValue = {props.survey.qTwo}
               type="text"
               name="qTwo"/>
           </Form.Group>

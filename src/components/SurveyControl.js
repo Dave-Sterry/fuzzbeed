@@ -3,6 +3,7 @@ import NewSurveyForm from './NewSurveyForm';
 import SurveyList from './SurveyList';
 import SurveyDetail from './SurveyDetail';
 import EditSurveyForm from './EditSurveyForm';
+import TakeSurvey from './TakeSurvey';
 import { connect } from 'react-redux';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import * as a from './../actions';
@@ -14,6 +15,7 @@ class SurveyControl extends React.Component {
     super(props);
     this.state = {
       selectedSurvey: null,
+      takeSurvey: false,
       editing: false
     };
   }
@@ -29,6 +31,18 @@ class SurveyControl extends React.Component {
       const action = a.toggleForm();
       dispatch(action);
     }
+  }
+
+  handleTakeClick = () => {
+    console.log("clicked");
+    this.setState({
+      takeSurvey: true,
+      selectedSurvey: null
+    });
+  }
+
+  handleCompletingSurvey = () => {
+    this.setState({ takeSurvey: false });
   }
 
   handleAddingNewSurveyToList = () => {
@@ -97,11 +111,15 @@ class SurveyControl extends React.Component {
         <SurveyDetail
           survey = {this.state.selectedSurvey}
           onClickingDelete = {this.handleDeletingSurvey}
-          onClickingEdit = {this.handleEditClick} />
+          onClickingEdit = {this.handleEditClick}
+          onClickingTake = {this.handleTakeClick} />
         buttonText = "Return to Survey List";
       } else if (this.props.formVisibleOnPage) {
         currentlyVisibleState = <NewSurveyForm onNewSurveyCreation={this.handleAddingNewSurveyToList}  />;
         buttonText = "Return to Survey List";
+      } else if (this.state.takeSurvey) {
+        currentlyVisibleState = <TakeSurvey survey = {this.state.selectedSurvey} onNewSurveyCompletion={this.handleCompletingSurvey}  />;
+        buttonText = "Complete Survey";
       } else {
         currentlyVisibleState = <SurveyList onSurveySelection={this.handleChangingSelectedSurvey} />;
         buttonText = "Add Survey";
